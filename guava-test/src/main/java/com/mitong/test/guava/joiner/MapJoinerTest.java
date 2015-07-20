@@ -10,7 +10,7 @@ import java.util.Map;
  * @email tong.mi@qunar.com
  * @date 15-7-19
  */
-public class MapJoiner {
+public class MapJoinerTest {
     public static void main(String[] args) {
         String expectedString = "Washington D.C=Redskins#New York City=Giants#Philadelphia=Eagles#Dallas=Cowboys";
         Map<String,String> testMap = Maps.newLinkedHashMap();
