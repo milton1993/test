@@ -1,4 +1,4 @@
-package com.mitong.test.guava;
+package com.mitong.test.guava.optional;
 
 import com.google.common.base.Optional;
 

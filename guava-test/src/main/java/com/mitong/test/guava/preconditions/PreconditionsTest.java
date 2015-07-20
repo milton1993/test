@@ -1,4 +1,4 @@
-package com.mitong.test.guava;
+package com.mitong.test.guava.preconditions;
 
 import com.google.common.base.Preconditions;
 
