@@ -1,5 +1,6 @@
 package com.mitong.test.guava.splitter;
 
+import com.google.common.base.CharMatcher;
 import com.google.common.base.Splitter;
 
 import java.util.regex.Pattern;
@@ -33,6 +34,14 @@ public class SplitterBasics {
 
         //obtain another Splitter object
         splitter.trimResults().omitEmptyStrings();
+        splitStrings = splitter.split("abc1fdkal234kfa;kl3");
+        for(String singleString : splitStrings) {
+            System.out.println(singleString);
+        }
+
+
+        //can trim any characters and use other methods of CharMatcher can also trim other types.
+        splitter = splitter.trimResults(CharMatcher.is('a')).omitEmptyStrings();
         splitStrings = splitter.split("abc1fdkal234kfa;kl3");
         for(String singleString : splitStrings) {
             System.out.println(singleString);
