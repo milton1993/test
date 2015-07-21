@@ -12,7 +12,7 @@ public class CharMatcherTest {
     public static void main(String[] args) {
 
 //        CharMatcher.BREAKING_WHITESPACE.replaceFrom();
-        Iterable<String> stringIterable = Splitter.on(CharMatcher.DIGIT).omitEmptyStrings().trimResults(CharMatcher.anyOf("afgi")).split("abc12def3322ghi1");
+        Iterable<String> stringIterable = Splitter.on(CharMatcher.JAVA_DIGIT).omitEmptyStrings().trimResults(CharMatcher.anyOf("afgi")).split("abc12def3322ghi1");
         for(String string : stringIterable) {
             System.out.println(string);
         }
