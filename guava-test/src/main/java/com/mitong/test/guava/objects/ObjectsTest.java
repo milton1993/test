@@ -1,6 +1,7 @@
 package com.mitong.test.guava.objects;
 
 import com.google.common.base.Objects;
+import com.google.common.collect.ComparisonChain;
 
 /**
  * @author tong.mi
@@ -38,7 +39,13 @@ public class ObjectsTest implements Comparable<ObjectsTest> {
 
     @Override
     public int compareTo(ObjectsTest o) {
-        return 0;
+        return ComparisonChain.start()
+                .compare(this.title, o.getTitle())
+                .compare(this.author, o.getAuthor())
+                .compare(this.publisher, o.getPublisher())
+                .compare(this.isbn, o.getIsbn())
+                .compare(this.price, o.getPrice())
+                .result();
     }
 
     public String getAuthor() {
