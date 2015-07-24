@@ -13,6 +13,7 @@
         <module>builder-test</module>
         <module>guava-test</module>
         <module>joda-time-test</module>
+        <module>java-test</module>
     </modules>
 
     <properties>
