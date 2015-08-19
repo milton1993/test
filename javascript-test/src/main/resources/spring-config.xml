@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:jdbc="http://www.springframework.org/schema/jdbc"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:tx="http://www.springframework.org/schema/tx"
+       xmlns:mvc="http://www.springframework.org/schema/mvc"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+       http://www.springframework.org/schema/jdbc
+       http://www.springframework.org/schema/jdbc/spring-jdbc.xsd
+       http://www.springframework.org/schema/tx
+       http://www.springframework.org/schema/tx/spring-tx-4.0.xsd
+       http://www.springframework.org/schema/aop
+       http://www.springframework.org/schema/aop/spring-aop-4.0.xsd
+       http://www.springframework.org/schema/mvc
+       http://www.springframework.org/schema/mvc/spring-mvc.xsd
+       http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context.xsd">
+
+
+    <mvc:annotation-driven/>
+
+    <context:annotation-config />
+    <!-- 扫描除了Controller之外的class文件 -->
+    <context:component-scan base-package="com.qunar.fresh">
+        <context:include-filter type="annotation" expression="org.springframework.stereotype.Controller"/>
+    </context:component-scan>
+
+    <bean id="viewResolver"
+          class="org.springframework.web.servlet.view.InternalResourceViewResolver"
+          p:prefix="/"
+          p:suffix=".jsp" />
+
+    <!--
+        将为找到请求route 到默认的Servlet上，default-servlet-name在Tomcat, Jetty, JBoss, and GlassFish容器中是default
+        参考 DefaultServletHttpRequestHandler
+    -->
+    <mvc:default-servlet-handler default-servlet-name="default"/>
+
+
+    <!-- 需要定义该resolver 才可以 先走这个resolver 在走 InternalResourceViewResolver 注意order -->
+    <bean class="org.springframework.web.servlet.view.BeanNameViewResolver" p:order="0"/>
+</beans>
