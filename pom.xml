@@ -18,6 +18,7 @@
         <module>spring-test</module>
         <module>mybatis-test</module>
         <module>javascript-test</module>
+        <module>excel-test</module>
     </modules>
 
     <properties>

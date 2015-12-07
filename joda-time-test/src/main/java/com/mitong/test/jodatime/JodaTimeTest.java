@@ -5,6 +5,8 @@ import org.joda.time.Days;
 import org.joda.time.format.DateTimeFormat;
 import org.joda.time.format.DateTimeFormatter;
 
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import java.util.Date;
 
 /**
@@ -24,5 +26,10 @@ public class JodaTimeTest {
         DateTime newYear = dateTime.plusYears(2).withDayOfYear(154);
         System.out.println(Days.daysBetween(dateTime, newYear).getDays());
         System.out.println(DATE_TIME_FORMATTER.print(newYear));
+
+
+        Calendar calendar = Calendar.getInstance();
+        calendar.add(Calendar.DATE, -1);
+        System.out.println(new SimpleDateFormat("yyyy-MM-dd").format(calendar.getTime()));
     }
 }
