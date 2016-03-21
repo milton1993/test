@@ -28,7 +28,7 @@ public class UrlCat {
         } catch (IOException e) {
             e.printStackTrace();
         } finally {
-            org.apache.hadoop.io.IOUtils.closeStream(inputStream);
+            IOUtils.closeStream(inputStream);
         }
     }
 }
