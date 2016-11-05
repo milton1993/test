@@ -18,7 +18,12 @@
         <module>spring-test</module>
         <module>mybatis-test</module>
         <module>javascript-test</module>
+<<<<<<< HEAD
         <module>groovy-test</module>
+=======
+        <module>excel-test</module>
+        <module>hbase-test</module>
+>>>>>>> 8f542ad50f59d8711ad3bbf7273f360057c5f54f
     </modules>
 
     <properties>
@@ -104,6 +109,11 @@
                 <groupId>junit</groupId>
                 <artifactId>junit</artifactId>
                 <version>${junit.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.hbase</groupId>
+                <artifactId>hbase-client</artifactId>
+                <version>1.1.2</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
